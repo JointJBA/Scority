@@ -14,7 +14,7 @@ $connect = mysqli_connect("localhost:3306", "root", "", "charitydb");
 
 $err = array('userexists' => '-1', 'problemcreatinguser' => '-2');
 
-if($_GET['cmnd']) {
+if(!empty($_GET)) {
         $cmnd = $_GET['cmnd'];
 
         switch ($cmnd) {
