@@ -24,7 +24,7 @@ $url = "vserver.php?cmnd=createEvent&name=$event_name&owner=$owner&hours=$hours&
 </head>
 <body>
 <script>
-$.get(<?php echo $url ?>);
+$.get("<?php echo $url ?>");
 </script>
   <div class="banner">
 

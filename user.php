@@ -60,6 +60,19 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
   </div>
 
   <div class="content" id="panel2-2">
+    <?php
+    $events = explode(',', getEventsInLocation($udata[8]));
+    for($i =0;$i < count($events); $i++) {
+      if(!empty($events[$i])) {
+        $evinfo = explode(",", getEeentInfo($events[$i]));
+        $name = $evinfo[1];
+        $owner = $evinfo[2];
+        $points = $evinfo[3];
+        $location = $evinfo[4];
+        $date = $evinfo[5];
+      }
+    }
+     ?>
     <p>Second panel content goes here...</p>
   </div>
   <div class="content" id="panel2-3">
