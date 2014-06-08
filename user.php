@@ -2,7 +2,6 @@
 $ema = $_POST['email'];
 
 $udata = explode(',', getUserInfo(getUserId($ema)));
-print_r($udata);
 ?>
 
 <!doctype html>
@@ -57,7 +56,7 @@ print_r($udata);
     $eventsforauser = explode('-', udata[4]);
     for($i =0; $i < count($eventsforauser); $i++) {
       if(!empty($eventsforauser[$i])) {
-        
+
       }
     }
     ?>
