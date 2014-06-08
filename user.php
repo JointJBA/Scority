@@ -87,7 +87,7 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
               $.get('vserver.php?cmnd=addevent&id=$udata[0]&event=$evinfo[0]');
             }
           </script>
-            <a class=\"button radius\"href=\"#\"> Add Event</a>
+            <button class=\"button radius\"onclick=\"click$evinfo[0]()\"> Add Event</button>
           </div>
         </div>
       </div>";
