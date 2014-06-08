@@ -64,41 +64,22 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
   </div>
   <div class="content" id="panel2-3">
     <?php
-    $ranks = explode(getListInLocation($udata[8]), ',');
+    $ranks = explode(',', getListInLocation($udata[8]));
     for($i=0; $i < count($ranks); $i++) {
-      $info = getUserInfo($ranks[$i]);
+      $info = explode(",", getUserInfo($ranks[$i]));
+      //print_r($info);
       $em = $info[1];
       $points = $info[3];
-
+      $rank = $i + 1;
     echo "<hr>
     <div class='rank-entry'>
       <h1>Email: $em</h1>
-      <h3>Rank: $i</h3>
+      <h3>Rank: $rank</h3>
       <h3>Points: $points</h3>
     </div>
-    <hr>"
+    <hr>";
     }    
     ?>
-    <script>
-    function getInfo(id) {
-      $.get("vserver.php?cmnd=getuserinfo&id=" + id, function (datum) {
-        var split = datum.split(",");
-        alert(split[1]);
-        alert(split[3]);
-        //[1] = email [3] = points
-      });
-    }
-    $.get("vserver.php?cmnd=ranking&location=nj", function(datum) {
-      var split = datum.split(",");
-      for(var i = 0; i < split.length; i++) {
-        if(split[i].length > 0) {
-          getInfo(split[i]);
-        }
-      }
-    });
-
-    </script>
-    <p>Third panel content goes here...</p>
   </div>
 </div>
         </div>
