@@ -49,21 +49,11 @@ $.get("<?php echo $url ?>");
 
   </div>
 
-  <!-- footer with the links at the bottom -->
-  <footer class="row fullWidth">
-    <div class="large-12 columns">
-      <hr/>
-      <div class="row">
-        <div class="large-6 large-offset-6 columns">
-          <ul class="inline-list right">
-            <li><a href="index.html">Home</a></li>
-              <li><a href="about_us.html">About Us</a></li>
-              <li><a href="contact_us.html">Contact Us</a></li>
-          </ul>
+<div class="row">
+          <div class="small-12 text-center">
+          <a href="index.php" class="button radius">Home</a>
+          </div>
         </div>
-      </div>
-    </div>
-  </footer>
 
 
 

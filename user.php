@@ -43,8 +43,12 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
     <div class="inner">
 <div class="tabs-content">
   <div class="content active" id="panel2-1">
-    <h2 id="email-title"></h2>  
+    <h2>_Email from _Location</h2>  
     <br>
+      
+    <div class="panel radius">
+    <h2>Points: _Points</h2>  
+    </div>
       
     <div class="panel radius">
     <h4>Bio:</h4>  
@@ -52,11 +56,16 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
       <H4><?php echo $udata[8];?></H4> 
     </p>
     </div>
+    <h3>Events:</h3>
     <?php 
     $eventsforauser = explode('-', udata[4]);
     for($i =0; $i < count($eventsforauser); $i++) {
       if(!empty($eventsforauser[$i])) {
         $eventinfo = explode(',', getEventInfo($eventsforauser[$i]));
+        echo "<div class='panel radius'>
+    <h4> $eventinfo</h4>
+    </div>";
+
       }
     }
     ?>

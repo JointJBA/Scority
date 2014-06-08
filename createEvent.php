@@ -19,7 +19,7 @@
       <h1>Scority</h1>
       <h2>Help a cause and score points!</h2>
 
-      <form action="" method="get">
+      <form action="event_viewer.php" method="GET">
     <div class="row text-center"><h4 class="banner-subtext">View Details of an Event</h4></div>
     <div class="row text-center"><div class="large-4 large-centered columns"><input type="text" name="event_name">
     </div></div>
@@ -30,20 +30,6 @@
 
   </div>
 
-<?php
-    if(!empty($_GET)) {
-      $eventname = $_GET['event_name'];
-      $info = explode(',', getEventInfo(getEventId($eventname)));
-      if(count($info) > 0) {
-        $users = explode('-', $info[6]);
-        for($i = 0; $i < count($users); $i++) {
-          if(!empty($users[$i])) {
-            $useremail = explode(',', getUserInfo($users[$i]))[1];
-          }
-        }
-      }
-    }
-     ?>
 
 
 
@@ -201,7 +187,11 @@
 
   </div>
 
-
+<div class="row">
+          <div class="small-12 text-center">
+          <a href="index.php" class="button radius">Home</a>
+          </div>
+        </div>
 
 
   <script src="js/vendor/jquery.js"></script>
