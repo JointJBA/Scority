@@ -1,0 +1,160 @@
+.fullWidth {
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+.nav{
+  margin-top: 15px;
+}
+
+.bannerNav{
+  margin-top: 5px;
+}
+
+.linkNavBanner {
+  color: #fff;
+  font-size: 20px;
+}
+
+
+.linkNavBanner:hover {
+  color: #2ecc71;
+
+}
+
+.linkNav {
+  color: #2ecc71;
+  font-size: 20px;
+}
+
+.linkNav:hover {
+  color: #27ae60;
+
+}
+
+
+.banner{
+  width: 100%;
+  margin-bottom: 30px;
+    background:url('../img/food_banner.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+
+.banner-subtext{
+  color: #ffffff;
+}
+
+.banner h1{
+  font-size: 70px;
+  color: #ffffff;
+
+  font-weight:bold;
+
+}
+.banner h2{
+  font-size: 50px;
+  color: #ffffff;
+
+  font-weight:bold;
+
+}
+
+.banner button {
+  border: black;
+  border-width: 2px;
+}
+
+.bannerLogo{
+  margin-top: 15px;
+  margin-bottom: 40px;
+  height: 200px;
+  width: auto;
+  -webkit-filter: drop-shadow(12px 12px 40px #fff);
+    filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='drop-shadow'><feGaussianBlur in='SourceAlpha' stdDeviation='4'/><feOffset dx='12' dy='12' result='offsetblur'/><feFlood flood-color='rgba(0,0,0,0.5)'/><feComposite in2='offsetblur' operator='in'/><feMerge><feMergeNode/><feMergeNode in='SourceGraphic'/></feMerge></filter></svg>#drop-shadow");
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+}
+
+.supplyAndDemandItem{
+  width: 100%;
+  padding: 20px;
+  height: 60px;
+  background: #DBF1D9;
+  margin-bottom: 15px;
+  color: #706F6F;
+  overflow-y: auto; 
+}
+.supplyAndDemandItem:hover{
+  background: #CADFC8;
+  color: #222222;
+
+}
+
+a {
+  color: #2ecc71;
+}
+
+a:hover{
+  color: #27ae60;
+}
+
+footer a{
+  font-size: 13px;
+}
+
+p {
+  font-size: 20px;
+}
+
+hr {
+  margin: 0 0 1.1875rem;
+}
+
+.tabs dd, .tabs .tab-title {
+position: relative;
+margin-bottom: 0 !important;
+list-style: none;
+float: left;
+width: 50%;
+}
+
+.user-tab{
+  width:33% !important;
+}
+
+.button{
+  background-color: #2ecc71;
+border-color: #27ae60;
+}
+
+.button:hover{
+  background-color: #27ae60;
+  }
+
+button, .button {
+background-color: #2ecc71;
+border-color: #23AC28;
+border-width: 2px;
+}
+
+button, .button:hover{
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+.large-button{
+  width: 100%;
+  height: 150px;
+  font-size: 100px;
+}
+
+.large-title{
+  font-size: 65px;
+}
