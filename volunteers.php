@@ -25,7 +25,7 @@
         <?php 
 
 if (isset($_POST['submit'])){
-  print_r($_POST);
+  //print_r($_POST);
   echo "<script>$.get('vserver.php?cmnd=createu&email=" . $_POST['email'] . "&password=" . $_POST['password'] . "&location=" . $_POST['location'] . "&bio=" . $_POST['bio'] . "');</script>";
 
 }  //create user with these attributes

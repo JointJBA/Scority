@@ -79,7 +79,7 @@ function addEvent($id, $eventId)
 {
         global $connect;
         $events = getEvents($id);
-        $connect->query("UPDATE volunteers SET events='" . $events . "," . $eventId . "' WHERE volunteers.id=$id");
+        $connect->query("UPDATE volunteers SET events='" . $events . "-" . $eventId . "' WHERE volunteers.id=$id");
         return getEvents($id);
 }
 
@@ -102,7 +102,7 @@ function getvolunteers($eventid) {
 
 function addusertoevent($id, $eventid) {
     global $connect;
-    $vonts = getvolunteers($eventid) . ',' . $id; 
+    $vonts = getvolunteers($eventid) . '-' . $id; 
     $connect->query("UPDATE events SET volunteers='$vonts' WHERE events.id=$eventid");
     return $connect->error;
 }
@@ -182,8 +182,12 @@ function insertUser($email, $password, $location, $bio) {
 
 function getEventsInLocation($location) {
         global $connect;
-        $result = $connect->query("SELECT id FROM events WHERE location='" . $location . "'")->fetch_row();
-        return arrayToString($result);
+        $result = $connect->query("SELECT id FROM events WHERE location='" . $location . "'");
+        $arr = array();
+        for($i = 0; $i < $result->num_rows; $i++) {
+            $arr[$i] = $result->fetch_row()[0];
+        }
+        return arrayToString($arr);
 }
 
 function arrayToString($array) {

@@ -1,3 +1,5 @@
+<?php include 'vserver.php'; ?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -12,22 +14,31 @@
 
   <div class="banner">
 
-
     <!-- Banner text -->
     <div class="row fullWidth text-center">
       <h1>Scority</h1>
       <h2>Help a cause and score points!</h2>
 
-      <form action="theater.php" method="get">
+      <form action="" method="get">
     <div class="row text-center"><h4 class="banner-subtext">View Details of an Event</h4></div>
-    <div class="row text-center"><div class="large-4 large-centered columns"><input type="text" name="theater_name"></div></div>
+    <div class="row text-center"><div class="large-4 large-centered columns"><input type="text" name="event_name">
+    </div></div>
     <div class="row text-center"><input class="button radius" type="submit" value="Find"></div>
+
     </form>
     </div>
 
   </div>
 
-
+<?php
+    if(!empty($_GET)) {
+      $eventname = $_GET['event_name'];
+      $info = explode(',', getEventInfo(getEventId($eventname)));
+      if(count($info) > 0) {
+        
+      }
+    }
+     ?>
 
 
 

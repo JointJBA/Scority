@@ -2,6 +2,7 @@
 $ema = $_POST['email'];
 
 $udata = explode(',', getUserInfo(getUserId($ema)));
+print_r($udata);
 ?>
 
 <!doctype html>
@@ -49,10 +50,17 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
     <div class="panel radius">
     <h4>Bio:</h4>  
     <p> 
-      <H4><?php echo $udata[9];?></H4> 
+      <H4><?php echo $udata[8];?></H4> 
     </p>
     </div>
-
+    <?php 
+    $eventsforauser = explode('-', udata[4]);
+    for($i =0; $i < count($eventsforauser); $i++) {
+      if(!empty($eventsforauser[$i])) {
+        
+      }
+    }
+    ?>
       
       
       
@@ -60,7 +68,8 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
 
   <div class="content" id="panel2-2">
     <?php
-    $events = explode(',', getEventsInLocation($udata[8]));
+    $events = explode(',', getEventsInLocation($udata[7]));
+    print_r($events);
     for($i =0;$i < count($events); $i++) {
       if(!empty($events[$i])) {
         $evinfo = explode(",", getEventInfo($events[$i]));
@@ -99,7 +108,7 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
   </div>
   <div class="content" id="panel2-3">
     <?php
-    $ranks = explode(',', getListInLocation($udata[8]));
+    $ranks = explode('-', getListInLocation($udata[7]));
     for($i=0; $i < count($ranks); $i++) {
       $info = explode(",", getUserInfo($ranks[$i]));
       //print_r($info);
