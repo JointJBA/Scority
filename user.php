@@ -32,7 +32,7 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
 
 
 
-<div class="row fullWidth">
+<div class="row text-center fullWidth">
 <div class="row fullWidth">
 <div> 
 <ul class="tabs" data-tab>
@@ -42,23 +42,14 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
 </ul>
     <div class="inner">
 <div class="tabs-content">
-<div class="text-center content active" id="panel2-1">
-    <h2>Email from Location</h2>  
+  <div class="content active" id="panel2-1">
+    <h2 id="email-title"></h2>  
     <br>
       
     <div class="panel radius">
-    <h2>Points:</h2>  
+    <h4>Bio:</h4>  
     <p> 
-        
-    
-    </p>
-    </div>
-
-    <div class="panel radius">
-    <h3>Bio:</h3>  
-    <p> 
-        
-    
+      <H4><?php echo $udata[9];?></H4> 
     </p>
     </div>
 
