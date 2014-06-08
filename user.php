@@ -63,14 +63,15 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
     $events = explode(',', getEventsInLocation($udata[8]));
     for($i =0;$i < count($events); $i++) {
       if(!empty($events[$i])) {
-        $evinfo = explode(",", getEeentInfo($events[$i]));
+        $evinfo = explode(",", getEventInfo($events[$i]));
         $name = $evinfo[1];
         $owner = $evinfo[2];
         $points = $evinfo[3];
         $location = $evinfo[4];
         $date = $evinfo[5];
+        //echo print_r($evinfo);
 
-      echo"  <div class=\"panel\">
+      echo "  <div class=\"panel\">
       
       <div class=\"row\">
         <div class=\"small-5 columns text-center\">
@@ -81,6 +82,11 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
             $location on $date</p>
           </div>
           <div class=\"small-6 columns text-center\">
+          <script>
+            function click$evinfo[0]() {
+              $.get('vserver.php?cmnd=addevent&id=$udata[0]&event=$evinfo[0]');
+            }
+          </script>
             <a class=\"button radius\"href=\"#\"> Add Event</a>
           </div>
         </div>
@@ -89,10 +95,6 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
 
     }
     ?>
-
-    <p>Name by Owner</p>
-    <p>Points: 234</p>
-    <p>location on date</p>
   </div>
   <div class="content" id="panel2-3">
     <?php

@@ -45,7 +45,8 @@ if(!empty($_GET)) {
                 echo getUserInfo($_GET['id']);
                 break;
                 case 'geteventinfo':
-                echo getEventInfo($_Get['id']);
+                echo getEventInfo($_GET['id']);
+                break;
                 case 'createEvent':
                 echo createEvent($_GET['name'], $_GET['owner'], $_GET['hours'], $_GET['location'], $_GET['date']);
                 break;
@@ -165,7 +166,7 @@ function insertUser($email, $password, $location, $bio) {
 
 function getEventsInLocation($location) {
         global $connect;
-        $result = mysqli_fetch_array($connect->query("SELECT id FROM events WHERE location='" . $location . "'"));
+        $result = $connect->query("SELECT id FROM events WHERE location='" . $location . "'")->fetch_row();
         return arrayToString($result);
 }
 
@@ -183,7 +184,7 @@ function arrayToString($array) {
 function createEvent($name, $owner, $points, $location, $date) {
         global $connect;
         global $err;
-        $result = $connect->query("INSERT INTO events (name, owner, points, location, date) VALUES ('" . $name . "', '".$owner."', '" . $points . "', '" . $date . "', '" .  date('Y-m-d H:i:s') . "')");
+        $result = $connect->query("INSERT INTO events (name, owner, points, location, date) VALUES ('" . $name . "', '".$owner."', '" . $points . "', '" . $location . "', '" .  date('Y-m-d H:i:s') . "')");
         if($connect->error) {
                 return 'problemcreatingevent';
         }
