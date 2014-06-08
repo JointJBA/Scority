@@ -69,6 +69,14 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
       $info = getUserInfo($ranks[$i]);
       $em = $info[1];
       $points = $info[3];
+
+    echo "<hr>
+    <div class='rank-entry'>
+      <h1>Email: $em</h1>
+      <h3>Rank: $i</h3>
+      <h3>Points: $points</h3>
+    </div>
+    <hr>"
     }    
     ?>
     <script>
