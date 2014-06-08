@@ -25,7 +25,7 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
 
     <!-- Banner text -->
     <div class="row fullWidth text-center">
-      <h1>Hi <?php echo "" ?></h1>
+      <h1>Hi <?php echo $udata[1] ?></h1>
   </div>
   </div>
 
@@ -48,9 +48,8 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
       
     <div class="panel radius">
     <h4>Bio:</h4>  
-    <p id="bio"> 
-        
-    
+    <p> 
+      <H4><?php echo $udata[9];?></H4> 
     </p>
     </div>
 
@@ -70,10 +69,30 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
         $points = $evinfo[3];
         $location = $evinfo[4];
         $date = $evinfo[5];
+
+      echo"  <div class=\"panel\">
+      
+      <div class=\"row\">
+        <div class=\"small-5 columns text-center\">
+          <p>$name by $owner
+            <br>
+            Points: $points
+            <br>
+            $location on $date</p>
+          </div>
+          <div class=\"small-6 columns text-center\">
+            <a class=\"button radius\"href=\"#\"> Add Event</a>
+          </div>
+        </div>
+      </div>";
       }
+
     }
-     ?>
-    <p>Second panel content goes here...</p>
+    ?>
+
+    <p>Name by Owner</p>
+    <p>Points: 234</p>
+    <p>location on date</p>
   </div>
   <div class="content" id="panel2-3">
     <?php
