@@ -35,7 +35,12 @@
       $eventname = $_GET['event_name'];
       $info = explode(',', getEventInfo(getEventId($eventname)));
       if(count($info) > 0) {
-        
+        $users = explode('-', $info[6]);
+        for($i = 0; $i < count($users); $i++) {
+          if(!empty($users[$i])) {
+            $useremail = explode(',', getUserInfo($users[$i]))[1];
+          }
+        }
       }
     }
      ?>
