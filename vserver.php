@@ -53,6 +53,9 @@ if(!empty($_GET)) {
                 case 'ranking':
                 echo getListInLocation($_GET['location']);
                 break;
+                case 'addusertoevent':
+                echo addusertoevent($_GET['id'], $_GET['eventid']);
+                break;
                 default:
                 echo "Not a valid command";
                 break;
@@ -76,7 +79,7 @@ function addEvent($id, $eventId)
 {
         global $connect;
         $events = getEvents($id);
-        $connect->query("UPDATE volunteers SET events='" . $events . "," . $eventId . "'");
+        $connect->query("UPDATE volunteers SET events='" . $events . "," . $eventId . "' WHERE volunteers.id=$id");
         return getEvents($id);
 }
 
@@ -89,6 +92,19 @@ function createUser($email, $password, $location, $bio) {
                 return $err['userexists'];
         }
 
+}
+
+function getvolunteers($eventid) {
+    global $connect;
+    $result = $connect->query("SELECT volunteers FROM events WHERE id='" . $eventid . "'");
+    return mysqli_fetch_array($result)[0];
+}
+
+function addusertoevent($id, $eventid) {
+    global $connect;
+    $vonts = getvolunteers($eventid) . ',' . $id; 
+    $connect->query("UPDATE events SET volunteers='$vonts' WHERE events.id=$eventid");
+    return $connect->error;
 }
 
 function loginUser($email, $password) {
