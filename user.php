@@ -56,7 +56,7 @@ $udata = explode(',', getUserInfo(getUserId($ema)));
     $eventsforauser = explode('-', udata[4]);
     for($i =0; $i < count($eventsforauser); $i++) {
       if(!empty($eventsforauser[$i])) {
-
+        $eventinfo = explode(',', getEventInfo($eventsforauser[$i]));
       }
     }
     ?>
