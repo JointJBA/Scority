@@ -209,7 +209,7 @@ function getUserInfo($id) {
 
 function getListInLocation($location) {
         global $connect;
-        $result = ($connect->query("SELECT id FROM volunteers WHERE location='" . $location . "' ORDER BY points"));
+        $result = ($connect->query("SELECT id FROM volunteers WHERE location='" . $location . "' ORDER BY points DESC"));
         $arr = array();
         for($i = 0; $i < $result->num_rows; $i++) {
             $arr[$i] = $result->fetch_row()[0];
