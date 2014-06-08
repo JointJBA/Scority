@@ -1,3 +1,9 @@
+<?php include 'vserver.php';
+$ema = $_POST['email'];
+
+$udata = explode(',', getUserInfo(getUserId($ema)));
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -13,7 +19,6 @@
 
 <body>
 <?php 
-print_r($_POST);
 ?>
   <div class="banner">
 
@@ -58,15 +63,24 @@ print_r($_POST);
     <p>Second panel content goes here...</p>
   </div>
   <div class="content" id="panel2-3">
+    <?php
+    $ranks = explode(getListInLocation($udata[8]), ',');
+    for($i=0; $i < count($ranks); $i++) {
+      $info = getUserInfo($ranks[$i]);
+      $em = $info[1];
+      $points = $info[3];
+    }    
+    ?>
     <script>
     function getInfo(id) {
       $.get("vserver.php?cmnd=getuserinfo&id=" + id, function (datum) {
-        alert(datum);
         var split = datum.split(",");
+        alert(split[1]);
+        alert(split[3]);
         //[1] = email [3] = points
       });
     }
-    $.get("vserver.php?cmnd=ranking&location=", function(datum) {
+    $.get("vserver.php?cmnd=ranking&location=nj", function(datum) {
       var split = datum.split(",");
       for(var i = 0; i < split.length; i++) {
         if(split[i].length > 0) {
